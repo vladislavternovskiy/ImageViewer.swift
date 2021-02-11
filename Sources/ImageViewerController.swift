@@ -3,10 +3,17 @@ import UIKit
 import SDWebImage
 #endif
 
+public struct DescriptionLabelConfig {
+    public let text: String
+    public let textColor: UIColor
+    public let font: UIFont
+}
+
 class ImageViewerController:UIViewController,
 UIGestureRecognizerDelegate {
     
     var imageView: UIImageView = UIImageView(frame: .zero)
+    lazy var descriptionLabel: UILabel = UILabel()
 
     var backgroundView:UIView? {
         guard let _parent = parent as? ImageCarouselViewController
@@ -34,13 +41,13 @@ UIGestureRecognizerDelegate {
     private var lastLocation:CGPoint = .zero
     private var isAnimating:Bool = false
     private var maxZoomScale:CGFloat = 1.0
+
+    private let labelConfig: DescriptionLabelConfig?
     
-    init(
-        index: Int,
-        imageItem:ImageItem) {
-        
+    init(index: Int, imageItem: ImageItem, labelConfig: DescriptionLabelConfig?) {
         self.index = index
         self.imageItem = imageItem
+        self.labelConfig = labelConfig
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -73,7 +80,20 @@ UIGestureRecognizerDelegate {
         leading = imageView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor)
         trailing = scrollView.trailingAnchor.constraint(equalTo: imageView.trailingAnchor)
         bottom = scrollView.bottomAnchor.constraint(equalTo: imageView.bottomAnchor)
-        
+
+        if let labelConfig = labelConfig {
+            descriptionLabel.text = labelConfig.text
+            descriptionLabel.font = labelConfig.font
+            descriptionLabel.textColor = labelConfig.textColor
+            descriptionLabel.textAlignment = .center
+            scrollView.addSubview(descriptionLabel)
+            NSLayoutConstraint.activate([
+                descriptionLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 24),
+                descriptionLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -24),
+                descriptionLabel.topAnchor.constraint(equalTo: self.imageView.bottomAnchor, constant: 24)
+            ])
+        }
+
         top.isActive = true
         leading.isActive = true
         trailing.isActive = true

@@ -55,6 +55,7 @@ public class ImageCarouselViewController:UIPageViewController, ImageViewerTransi
     private(set) lazy var navItem = UINavigationItem()
     
     private let imageViewerPresentationDelegate = ImageViewerTransitionPresentationManager()
+    private var labelConfig: DescriptionLabelConfig?
     
     public init(
         sourceView:UIImageView,
@@ -125,6 +126,8 @@ public class ImageCarouselViewController:UIPageViewController, ImageViewerTransi
                         target: self,
                         action: #selector(didTapRightNavBarItem(_:)))
                     onRightNavBarTapped = onTap
+            case .descriptionLabel(let config):
+                labelConfig = config
             }
         }
     }
@@ -139,9 +142,9 @@ public class ImageCarouselViewController:UIPageViewController, ImageViewerTransi
         dataSource = self
 
         if let imageDatasource = imageDatasource {
-            let initialVC:ImageViewerController = .init(
-                index: initialIndex,
-                imageItem: imageDatasource.imageItem(at: initialIndex))
+            let initialVC:ImageViewerController = .init(index: initialIndex,
+                                                        imageItem: imageDatasource.imageItem(at: initialIndex),
+                                                        labelConfig: labelConfig)
             setViewControllers([initialVC], direction: .forward, animated: true)
         }
     }
@@ -192,7 +195,8 @@ extension ImageCarouselViewController:UIPageViewControllerDataSource {
         let newIndex = vc.index - 1
         return ImageViewerController.init(
             index: newIndex,
-            imageItem:  imageDatasource.imageItem(at: newIndex))
+            imageItem:  imageDatasource.imageItem(at: newIndex),
+            labelConfig: labelConfig)
     }
     
     public func pageViewController(
@@ -206,6 +210,6 @@ extension ImageCarouselViewController:UIPageViewControllerDataSource {
         let newIndex = vc.index + 1
         return ImageViewerController.init(
             index: newIndex,
-            imageItem: imageDatasource.imageItem(at: newIndex))
+            imageItem: imageDatasource.imageItem(at: newIndex), labelConfig: labelConfig)
     }
 }

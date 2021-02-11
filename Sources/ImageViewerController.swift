@@ -7,6 +7,12 @@ public struct DescriptionLabelConfig {
     public let text: String
     public let textColor: UIColor
     public let font: UIFont
+
+    public init(text: String, textColor: UIColor, font: UIFont) {
+        self.text = text
+        self.textColor = textColor
+        self.font = font
+    }
 }
 
 class ImageViewerController:UIViewController,

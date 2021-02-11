@@ -13,7 +13,6 @@
 		3FBC5E8F24E5910E00E68938 /* UINavigationBar_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC5E8324E5910E00E68938 /* UINavigationBar_Extensions.swift */; };
 		3FBC5E9024E5910E00E68938 /* ImageCarouselViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC5E8424E5910E00E68938 /* ImageCarouselViewController.swift */; };
 		3FBC5E9124E5910E00E68938 /* ImageViewerOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC5E8524E5910E00E68938 /* ImageViewerOption.swift */; };
-		3FBC5E9224E5910E00E68938 /* RightNavItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC5E8624E5910E00E68938 /* RightNavItemDelegate.swift */; };
 		3FBC5E9324E5910E00E68938 /* ImageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC5E8724E5910E00E68938 /* ImageItem.swift */; };
 		3FBC5E9424E5910E00E68938 /* ImageViewerTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC5E8824E5910E00E68938 /* ImageViewerTheme.swift */; };
 		3FBC5E9524E5910E00E68938 /* ImageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FBC5E8924E5910E00E68938 /* ImageViewerController.swift */; };
@@ -29,7 +28,6 @@
 		3FBC5E8324E5910E00E68938 /* UINavigationBar_Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBar_Extensions.swift; sourceTree = "<group>"; };
 		3FBC5E8424E5910E00E68938 /* ImageCarouselViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCarouselViewController.swift; sourceTree = "<group>"; };
 		3FBC5E8524E5910E00E68938 /* ImageViewerOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerOption.swift; sourceTree = "<group>"; };
-		3FBC5E8624E5910E00E68938 /* RightNavItemDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RightNavItemDelegate.swift; sourceTree = "<group>"; };
 		3FBC5E8724E5910E00E68938 /* ImageItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageItem.swift; sourceTree = "<group>"; };
 		3FBC5E8824E5910E00E68938 /* ImageViewerTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerTheme.swift; sourceTree = "<group>"; };
 		3FBC5E8924E5910E00E68938 /* ImageViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerController.swift; sourceTree = "<group>"; };
@@ -77,7 +75,6 @@
 				3FBC5E8324E5910E00E68938 /* UINavigationBar_Extensions.swift */,
 				3FBC5E8424E5910E00E68938 /* ImageCarouselViewController.swift */,
 				3FBC5E8524E5910E00E68938 /* ImageViewerOption.swift */,
-				3FBC5E8624E5910E00E68938 /* RightNavItemDelegate.swift */,
 				3FBC5E8724E5910E00E68938 /* ImageItem.swift */,
 				3FBC5E8824E5910E00E68938 /* ImageViewerTheme.swift */,
 				3FBC5E8924E5910E00E68938 /* ImageViewerController.swift */,
@@ -211,7 +208,6 @@
 				3FBC5E9624E5910E00E68938 /* SimpleImageDatasource.swift in Sources */,
 				3FBC5E8C24E5910E00E68938 /* UIImageView_Extensions.swift in Sources */,
 				3FBC5E9124E5910E00E68938 /* ImageViewerOption.swift in Sources */,
-				3FBC5E9224E5910E00E68938 /* RightNavItemDelegate.swift in Sources */,
 				3FBC5E9324E5910E00E68938 /* ImageItem.swift in Sources */,
 				3FBC5E8F24E5910E00E68938 /* UINavigationBar_Extensions.swift in Sources */,
 			);

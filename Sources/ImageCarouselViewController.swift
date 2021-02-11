@@ -26,7 +26,7 @@ public class ImageCarouselViewController:UIPageViewController, ImageViewerTransi
  
     var initialIndex = 0
     
-    var theme:ImageViewerTheme = .light {
+    var theme:ImageViewerTheme = .dark() {
         didSet {
             navItem.leftBarButtonItem?.tintColor = theme.tintColor
             backgroundView?.backgroundColor = theme.color
@@ -116,14 +116,14 @@ public class ImageCarouselViewController:UIPageViewController, ImageViewerTransi
                         title: title,
                         style: .plain,
                         target: self,
-                        action: #selector(diTapRightNavBarItem(_:)))
+                        action: #selector(didTapRightNavBarItem(_:)))
                     onRightNavBarTapped = onTap
                 case .rightNavItemIcon(let icon, let onTap):
                     navItem.rightBarButtonItem = UIBarButtonItem(
                         image: icon,
                         style: .plain,
                         target: self,
-                        action: #selector(diTapRightNavBarItem(_:)))
+                        action: #selector(didTapRightNavBarItem(_:)))
                     onRightNavBarTapped = onTap
             }
         }
@@ -165,7 +165,7 @@ public class ImageCarouselViewController:UIPageViewController, ImageViewerTransi
     }
     
     @objc
-    func diTapRightNavBarItem(_ sender:UIBarButtonItem) {
+    func didTapRightNavBarItem(_ sender:UIBarButtonItem) {
         guard let onTap = onRightNavBarTapped,
             let _firstVC = viewControllers?.first as? ImageViewerController
             else { return }
@@ -173,7 +173,7 @@ public class ImageCarouselViewController:UIPageViewController, ImageViewerTransi
     }
     
     override public var preferredStatusBarStyle: UIStatusBarStyle {
-        if theme == .dark {
+        if case .dark = theme {
             return .lightContent
         }
         return .default

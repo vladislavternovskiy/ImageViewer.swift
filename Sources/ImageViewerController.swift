@@ -92,7 +92,7 @@ UIGestureRecognizerDelegate {
             descriptionLabel.font = labelConfig.font
             descriptionLabel.textColor = labelConfig.textColor
             descriptionLabel.textAlignment = .center
-            scrollView.addSubview(descriptionLabel)
+            self.view.addSubview(descriptionLabel)
             NSLayoutConstraint.activate([
                 descriptionLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 24),
                 descriptionLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -24),
